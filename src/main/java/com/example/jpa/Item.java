@@ -1,11 +1,10 @@
-package com.example.jpa_native_delete;
+package com.example.jpa;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -14,7 +13,7 @@ import lombok.experimental.Accessors;
 @Data
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = false, onlyExplicitlyIncluded = true)
-public class Cart {
+public class Item {
     @Id
     @EqualsAndHashCode.Include
     private int id;
@@ -22,7 +21,7 @@ public class Cart {
     @EqualsAndHashCode.Include
     private String name;
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Item> items;
-
+    @JsonIgnore
+    @ManyToOne(optional = false)
+    private Cart cart;
 }

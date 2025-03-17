@@ -1,4 +1,4 @@
-package com.example.jpa_native_delete;
+package com.example.jpa;
 
 import java.util.ArrayList;
 import java.util.List;

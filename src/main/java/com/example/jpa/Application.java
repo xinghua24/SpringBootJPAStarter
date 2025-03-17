@@ -1,4 +1,4 @@
-package com.example.jpa_native_delete;
+package com.example.jpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
